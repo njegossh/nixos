@@ -23,6 +23,7 @@
     syncthing eartag lazygit foliate gcc
     nautilus loupe baobab celluloid
     vitetris quickemu blackbox-terminal
+    devenv
 	];
 
   #services.flatpak = {

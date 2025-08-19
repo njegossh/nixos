@@ -14,7 +14,7 @@
         ./configuration.nix
 				./packages.nix
         ./network.nix
-				./flutter.nix
+        #./flutter.nix
 				./gnome.nix
 				./nvim.nix
         ./bash.nix
