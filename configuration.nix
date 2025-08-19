@@ -41,7 +41,11 @@
     "autovt@tty1".enable = false;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings = {
+    trusted-users = [ "root" "marko" ];
+    experimental-features = [ "nix-command" "flakes"];
+  };
+
   system.stateVersion = "24.11"; 
 
   virtualisation.docker.enable = true;
