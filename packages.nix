@@ -4,6 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
   programs.firefox.enable = true;
+  services.open-webui.enable = true;
   programs.git = {
     enable = true;
     config.user = {
@@ -21,8 +22,8 @@
     gnome-disk-utility gnome-system-monitor
     fzf fragments addwater ptyxis amberol
     syncthing eartag lazygit foliate gcc
-    nautilus loupe baobab celluloid kooha
-    vitetris quickemu blackbox-terminal
+    nautilus loupe baobab kooha
+    vitetris blackbox-terminal
 	];
 
   #services.flatpak = {
