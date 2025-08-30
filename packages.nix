@@ -24,7 +24,7 @@
     gnome-disk-utility gnome-system-monitor
     fzf fragments addwater ptyxis amberol
     syncthing eartag lazygit foliate gcc
-    nautilus loupe baobab kooha
+    nautilus loupe baobab kooha alpaca
     vitetris blackbox-terminal
 	];
 
