@@ -22,8 +22,8 @@
     gnome-disk-utility gnome-system-monitor
     fzf fragments addwater ptyxis amberol
     syncthing eartag lazygit foliate gcc
-    nautilus loupe baobab kooha
-    vitetris blackbox-terminal
+    nautilus loupe baobab kooha dotnet-sdk
+    vitetris blackbox-terminal live-server
 	];
 
   #services.flatpak = {
