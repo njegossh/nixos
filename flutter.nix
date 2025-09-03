@@ -11,7 +11,7 @@ in {
 	};
 
 	environment.systemPackages = with pkgs;[
-    openjdk17 waydroid sdkmanager
+    openjdk17 waydroid sdkmanager unzip
 	];
 
 	virtualisation.waydroid.enable = true;

@@ -10,8 +10,8 @@
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
 				nvf.nixosModules.default
-				./hardware-configuration.nix
         ./configuration.nix
+				./hardware.nix
 				./packages.nix
         ./network.nix
 				./flutter.nix

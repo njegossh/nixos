@@ -31,6 +31,7 @@
         dart.enable = true;
         nix.enable = true;
         ts.enable = true;
+        css.enable = true;
       };
       lsp = {
         enable = true;
