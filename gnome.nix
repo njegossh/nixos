@@ -37,7 +37,7 @@
         ];
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Terminal";
-          command = "blackbox";
+          command = "kgx";
           binding = "<Super>Return";
         };
         "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
