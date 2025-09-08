@@ -32,7 +32,7 @@
         nix.enable = true;
         ts.enable = true;
         css.enable = true;
-        c.enable = true;
+        clang.enable = true;
       };
       lsp = {
         enable = true;
