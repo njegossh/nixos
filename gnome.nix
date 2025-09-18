@@ -1,6 +1,7 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell just-perfection app-icons-taskbar
+    rounded-window-corners-reborn
   ];
 
   services.desktopManager.gnome = {
@@ -34,6 +35,7 @@
 					blur-my-shell.extensionUuid
 					just-perfection.extensionUuid
           app-icons-taskbar.extensionUuid
+          rounded-window-corners-reborn.extensionUuid
         ];
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Terminal";
