@@ -3,18 +3,18 @@
   
   imports = [( modulesPath + "/installer/scan/not-detected.nix" )];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/d201743b-032c-4d54-879b-38dd426415f2";
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/5544b4b3-a993-428e-9b5c-ccc5d1da7319";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/disk/by-uuid/2D79-D704";
+    device = "/dev/disk/by-uuid/A7B0-0DCB";
     fsType = "vfat";
     options = [ "fmask=0077" "dmask=0077" ];
   };
@@ -26,5 +26,5 @@
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

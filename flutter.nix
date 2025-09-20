@@ -11,12 +11,9 @@ in {
 	};
 
 	environment.systemPackages = with pkgs;[
-    openjdk17 waydroid sdkmanager unzip
+    openjdk17 sdkmanager unzip
 	];
 
-	virtualisation.waydroid.enable = true;
-	virtualisation.libvirtd.enable = true;
-	boot.kernelModules = [ "kvm-amd" ];
 	programs.nix-ld.enable = true;
 	programs.adb.enable = true;
 

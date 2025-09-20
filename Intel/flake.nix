@@ -10,14 +10,14 @@
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
 				nvf.nixosModules.default
-        ./configuration.nix
-				./hardware.nix
-				./packages.nix
-        ./network.nix
-				./flutter.nix
-				./gnome.nix
-				./nvim.nix
-        ./bash.nix
+        ../configuration.nix
+				./intel-hardware.nix
+				../packages.nix
+        ../network.nix
+				../flutter.nix
+				../gnome.nix
+				../nvim.nix
+        ../bash.nix
       ];
     };
   };
