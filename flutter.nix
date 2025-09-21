@@ -30,7 +30,7 @@ in {
         if [ ! -d "${flutterHome}" ]; then
 					${pkgs.git}/bin/git clone https://github.com/flutter/flutter.git ${flutterHome}
 				fi
-				${pkgs.sdkmanager}/bin/sdkmanager "platforms;android-34" \
+				${pkgs.sdkmanager}/bin/sdkmanager "platforms;android-36" \
 				"build-tools;34.0.0" "ndk-bundle;r28" "platform-tools" \
 				"skiaparser;3" "tools" "cmdline-tools;9.0" "ndk;r28"
 		'';
