@@ -24,7 +24,6 @@
     fzf fragments addwater kgx amberol
     nautilus loupe baobab bombadillo
     vitetris blackbox-terminal
-    debootstrap rustdesk
 	];
 
   #services.flatpak = {
