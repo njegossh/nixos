@@ -33,6 +33,7 @@
         ts.enable = true;
         css.enable = true;
         clang.enable = true;
+        kotlin.enable = true;
       };
       lsp = {
         enable = true;

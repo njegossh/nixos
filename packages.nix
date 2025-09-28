@@ -5,25 +5,17 @@
 	services.printing.enable = false;
   programs.firefox.enable = true;
 
-  programs.git = {
-    enable = true;
-    config.user = {
-      name = "Marko";
-      email = "markopetrovic3939@gmail.com";
-    };
-  };
-
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
   environment.systemPackages = with pkgs; [
-    gnome-disk-utility gnome-system-monitor
+    gnome-disk-utility mission-center
     syncthing eartag lazygit foliate gcc
-    fzf fragments addwater kgx amberol
+    fzf fragments addwater kgx cmus
     nautilus loupe baobab bombadillo
-    vitetris blackbox-terminal
+    recordbox rustdesk quod-libet
 	];
 
   #services.flatpak = {
