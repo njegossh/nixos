@@ -3,7 +3,6 @@
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
-  programs.firefox.enable = true;
 
   programs.steam = {
     enable = true;
@@ -15,7 +14,7 @@
     syncthing eartag lazygit foliate gcc
     fzf fragments addwater kgx cmus
     nautilus loupe baobab bombadillo
-    recordbox rustdesk quod-libet
+    recordbox rustdesk
 	];
 
   #services.flatpak = {
