@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     mission-center gcc fzf kgx lazygit 
-    syncthing foliate cmus fragments 
+    syncthing foliate fragments kew
     nautilus loupe baobab bombadillo
     rustdesk
 	];
