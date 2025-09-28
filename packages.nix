@@ -10,9 +10,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnome-disk-utility mission-center
-    syncthing eartag lazygit foliate gcc
-    fzf fragments addwater kgx cmus
+    mission-center gcc fzf kgx lazygit 
+    syncthing foliate cmus fragments 
     nautilus loupe baobab bombadillo
     rustdesk
 	];
