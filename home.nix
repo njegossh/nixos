@@ -22,11 +22,11 @@
         name = "Marko";
         isDefault = true;
         containers = {
-          Personal =  { color = "orange";   icon = "fingerprint"; id = 0; };
-          Work =      { color = "red";      icon = "briefcase";   id = 1; };
-          Shop =      { color = "green";    icon = "cart";        id = 2; };
-          Uni =       { color = "purple";   icon = "fence";       id = 3; };
-          I2P =       { color = "toolbar";  icon = "chill";       id = 4; };
+          Personal =  { color = "orange";   icon = "fingerprint"; id = 1; };
+          Work =      { color = "red";      icon = "briefcase";   id = 2; };
+          Shop =      { color = "green";    icon = "cart";        id = 3; };
+          Uni =       { color = "purple";   icon = "fence";       id = 4; };
+          I2P =       { color = "toolbar";  icon = "chill";       id = 5; };
         };
       };
     };

@@ -14,7 +14,7 @@
     syncthing eartag lazygit foliate gcc
     fzf fragments addwater kgx cmus
     nautilus loupe baobab bombadillo
-    recordbox rustdesk
+    rustdesk
 	];
 
   #services.flatpak = {
