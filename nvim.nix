@@ -34,6 +34,7 @@
         css.enable = true;
         clang.enable = true;
         kotlin.enable = true;
+        java.enable = true;
       };
       lsp = {
         enable = true;
