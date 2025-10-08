@@ -13,7 +13,7 @@
     mission-center gcc fzf kgx lazygit 
     syncthing foliate fragments kew
     nautilus loupe baobab bombadillo
-    rustdesk
+    rustdesk epiphany
 	];
 
   #services.flatpak = {
