@@ -1,7 +1,6 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell just-perfection app-icons-taskbar
-    rounded-window-corners-reborn
+    blur-my-shell just-perfection 
   ];
 
   services.desktopManager.gnome = {
@@ -34,12 +33,10 @@
         "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
 					blur-my-shell.extensionUuid
 					just-perfection.extensionUuid
-          app-icons-taskbar.extensionUuid
-          rounded-window-corners-reborn.extensionUuid
         ];
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Terminal";
-          command = "blackbox";
+          command = "kgx";
           binding = "<Super>Return";
         };
         "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
@@ -55,11 +52,6 @@
           "status-icons@gnome-shell-extensions.gcampax.github.com"
           "apps-menu@gnome-shell-extensions.gcampax.github.com"
           "emoji-copy@felipeftn"
-        ];
-        "org/gnome/shell".favorite-apps = [
-          "org.gnome.Nautilus.desktop"
-          "firefox.desktop"
-          "com.raggesilver.BlackBox.desktop"
         ];
         "org/gnome/settings-daemon/plugins/color" = {
           night-light-enabled = true;
@@ -81,16 +73,6 @@
 				"org/gnome/desktop/wm/preferences" = {
 					titlebar-font = "JetBrainsMono Nerd Font Bold 10";
 				};
-        "dev/qwery/AddWater/Firefox" = {
-          theme-enabled = true;
-          tabs-as-headerbar = true;
-        };
-        "com/raggesilver/BlackBox" = {
-          font = "JetBrainsMono Nerd Font Bold 10";
-          show-headerbar = false;
-          show-scrollbars = false;
-          floating-controls = true;
-        };
       };
     }];
   };
