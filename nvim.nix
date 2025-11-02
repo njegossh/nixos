@@ -1,7 +1,6 @@
 { pkgs, ... } : {
-  environment.systemPackages = with pkgs; [ 
-    neovim wl-clipboard 
-  ];
+  environment.systemPackages = [ pkgs.wl-clipboard ];
+  programs.neovim.enable = true;
 
   programs.nvf = {
     enable = true;

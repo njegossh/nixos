@@ -13,7 +13,6 @@ in {
 
 	environment.systemPackages = with pkgs;[
     openjdk17 sdkmanager unzip
-    gradle
 	];
 
 	programs.nix-ld.enable = true;

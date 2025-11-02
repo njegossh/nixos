@@ -8,22 +8,11 @@
         4444 7657 #I2P 
         22000     #Syncthing 
         42410     #I2P Custom
-        51820     #Wireguard
       ];
       allowedUDPPorts = [ 
         21027     #Syncthing 
         42410     #I2P Custom
       ];
-    };
-
-    wireguard = {
-      enable = true;
-      interfaces = {
-        wg0 = {
-          privateKeyFile = "/etc/wireguard/server_private.key";
-          listenPort = 51820;
-        };
-      };
     };
   };
 
