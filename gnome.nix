@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell just-perfection rounded-window-corners-reborn
   ];
-
   services.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''

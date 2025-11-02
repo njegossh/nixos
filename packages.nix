@@ -10,10 +10,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    mission-center gcc fzf kgx lazygit 
-    syncthing foliate fragments kew
-    nautilus loupe baobab bombadillo
-    rustdesk addwater
+    gcc fzf gnome-console nautilus
+    foliate loupe rustdesk
 	];
 
   #services.flatpak = {

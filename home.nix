@@ -1,17 +1,17 @@
 { ... } : {
   home.stateVersion = "24.11";
   
-  #home.packages = with pkgs; [] ;
-  
   programs.git = {
     enable = true;
-    userName = "Marko Petrovic";
-    userEmail = "markopetrovic3939@gmail.com";
+    settings.user = {
+      name = "Marko Petrovic";
+      email = "markopetrovic3939@gmail.com";
+    }; 
   };
 
   programs.cmus = {
     enable = true;
-    theme = "gruvbox";
+    theme = "gruvbox-warm";
   };
 
   programs.firefox = {
