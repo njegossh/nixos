@@ -1,20 +1,19 @@
 {
   description = "System flake";
   inputs = {
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 		nvf.url = "github:notashelf/nvf/pull/1209/head";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
-  outputs = { home-manager, nix-flatpak, nixpkgs, nvf, ... } : let
+  outputs = { home-manager, nixpkgs, nvf, ... } : let
     sharedModules = [
         home-manager.nixosModules.home-manager
-        nix-flatpak.nixosModules.nix-flatpak
 				nvf.nixosModules.default
         ./configuration.nix
 				./packages.nix
         ./network.nix
 				./flutter.nix
+        ./audio.nix
 				./gnome.nix
 				./nvim.nix
         ./bash.nix
