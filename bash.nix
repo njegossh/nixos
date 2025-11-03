@@ -10,8 +10,8 @@
     "################Commands################"
     "sudo du -sh *"
     "sudo docker start vpn && docker exec -it vpn bash && docker stop vpn"
-    "git log --patch --stat" "git diff" "git add . && git commit -m"
-    "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#intel"
+    "git log --patch --stat" "git diff" "git add . && git commit -m "
+    "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#"
   ];
 in {
   programs.bash = {
