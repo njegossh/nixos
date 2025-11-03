@@ -1,17 +1,12 @@
 { pkgs, ... } : {
-  environment.systemPackages = [ pkgs.ncmpcpp ];
+  environment.systemPackages = with pkgs; [ kew cmus ];
 
-  services = {
-    mpd = {
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa = {
       enable = true;
-      user = "marko";
-      musicDirectory = "/home/marko/Music";
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+      support32Bit = true;
     };
   };
 }
