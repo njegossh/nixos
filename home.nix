@@ -1,4 +1,5 @@
 { ... } : {
+  xdg.desktopEntries.nvim = { name = ""; noDisplay = true; };
   programs = {
     git = {
       enable = true;
