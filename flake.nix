@@ -2,8 +2,11 @@
   description = "System flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-		nvf.url = "github:notashelf/nvf/pull/1209/head";
-    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+		nvf.url = "github:notashelf/nvf";
+    home-manager = { 
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { home-manager, nixpkgs, nvf, ... } : let
     sharedModules = [

@@ -16,7 +16,7 @@
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker"];
   };
   systemd.services = {
     "getty@tty1".enable = false;
@@ -27,6 +27,5 @@
     experimental-features = [ "nix-command" "flakes"];
   };
   virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "marko" ];
   system.stateVersion = "24.11"; 
 }
