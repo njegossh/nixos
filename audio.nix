@@ -1,5 +1,5 @@
 { pkgs, ... } : {
-  environment.systemPackages = with pkgs; [ kew cmus ];
+  environment.systemPackages = [ pkgs.cmus ];
 
   services.pipewire = {
     enable = true;
