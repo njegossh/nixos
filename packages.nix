@@ -10,7 +10,7 @@
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
       fzf gnome-console nautilus
-      foliate loupe rustdesk
+      foliate loupe
     ];
   };
   services = {
