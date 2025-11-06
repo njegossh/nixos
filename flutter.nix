@@ -12,7 +12,7 @@ in {
       PATH = [ "$PATH" "${flutterHome}/bin/" ];
     };
     systemPackages = with pkgs;[
-      openjdk17 sdkmanager unzip
+      openjdk17 sdkmanager
     ];
   };
   programs = {
