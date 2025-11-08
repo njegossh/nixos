@@ -9,22 +9,22 @@
     };
   };
   outputs = { home-manager, nixpkgs, nvf, ... } : let
+    home = {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.marko = import ./home.nix;
+    };
     sharedModules = [
-        home-manager.nixosModules.home-manager
-				nvf.nixosModules.default
-        ./configuration.nix
-				./packages.nix
-        ./network.nix
-				./flutter.nix
-        ./audio.nix
-				./gnome.nix
-				./nvim.nix
-        ./bash.nix
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.marko = import ./home.nix;
-        }
+      home-manager.nixosModules.home-manager
+      nvf.nixosModules.default
+      ./configuration.nix
+      ./packages.nix
+      ./network.nix
+      ./flutter.nix
+      ./gnome.nix
+      ./nvim.nix
+      ./bash.nix
+      home
     ];
   in { 
     nixosConfigurations = {

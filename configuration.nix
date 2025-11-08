@@ -12,6 +12,14 @@
       gdm.enable = true;
       autoLogin.user = "marko";
     };
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+    };
   };
   users.users.marko = {
     isNormalUser = true;
