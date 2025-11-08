@@ -3,7 +3,6 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-
   time.timeZone = "Europe/Belgrade";
   security.rtkit.enable = true;
 
@@ -13,25 +12,28 @@
       gdm.enable = true;
       autoLogin.user = "marko";
     };
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+    };
   };
-
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker"];
   };
-
   systemd.services = {
     "getty@tty1".enable = false;
     "autovt@tty1".enable = false;
   };
-
   nix.settings = {
     trusted-users = [ "root" "marko" ];
     experimental-features = [ "nix-command" "flakes"];
   };
-
   virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "marko" ];
   system.stateVersion = "24.11"; 
 }
