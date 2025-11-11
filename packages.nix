@@ -9,8 +9,8 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      fzf gnome-console nautilus foliate cmus
-      debootstrap
+      fzf gnome-console nautilus foliate
+      debootstrap gapless
     ];
   };
   services = {
