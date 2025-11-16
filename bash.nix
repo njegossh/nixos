@@ -36,7 +36,7 @@ in {
         local inputs=$(printf '%s\n' "$hist" "''${commons[@]}")
         local unique=$(echo "$inputs" | tac | awk '!seen[$0]++')
 
-        READLINE_LINE=$(echo "$unique" | fzf --no-sort --exact") || return
+        READLINE_LINE=$(echo "$unique" | fzf --no-sort --exact) || return
         READLINE_POINT=''${#READLINE_LINE}
       }
 
