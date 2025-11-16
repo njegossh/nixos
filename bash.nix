@@ -8,7 +8,7 @@
     "${berg}/NixOS"     "${berg}/Boardline" "${berg}/Template"
     "${work}/Invoicing" "${work}/Expenses"  "${work}/Commons"
     "################Commands################"
-    "sudo du -sh *" "diff -r"
+    "sudo du -sh *" "diff -r" "find -printf '%T+ %p\n' | sort"
     "sudo docker start vpn && docker exec -it vpn bash && docker stop vpn"
     "git log --patch --stat" "git diff" "git add . && git commit -m "
     "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#"
@@ -36,7 +36,7 @@ in {
         local inputs=$(printf '%s\n' "$hist" "''${commons[@]}")
         local unique=$(echo "$inputs" | tac | awk '!seen[$0]++')
 
-        READLINE_LINE=$(echo "$unique" | fzf --no-sort --prompt="Search all > ") || return
+        READLINE_LINE=$(echo "$unique" | fzf --no-sort --exact") || return
         READLINE_POINT=''${#READLINE_LINE}
       }
 
