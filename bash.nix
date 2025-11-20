@@ -10,7 +10,7 @@
     "################Commands################"
     "sudo du -sh *" "diff -r" "find -printf '%T+ %p\n' | sort"
     "sudo docker start vpn && docker exec -it vpn bash && docker stop vpn"
-    "git log --patch --stat" "git diff" "git add . && git commit -m "
+    "git reset --hard" "git log --patch --stat" "git diff" "git add . && git commit -m "
     "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#"
   ];
   motorola = "/run/user/1000/gvfs/mtp:host=motorola_motorola_edge_50_neo_ZY22L9Q82F/Internal\ shared\ storage";
