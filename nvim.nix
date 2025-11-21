@@ -1,5 +1,4 @@
-{ pkgs, ... } : {
-  environment.systemPackages = [ pkgs.wl-clipboard ];
+{ ... } : {
   programs = {
     neovim.enable = true;
     nvf = {
@@ -9,6 +8,7 @@
         autocomplete.nvim-cmp.enable = true;
         clipboard = {
           enable = true;
+          providers.wl-copy.enable = true;
           registers = "unnamedplus";
         };
         options = {

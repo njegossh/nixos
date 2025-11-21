@@ -8,12 +8,9 @@ in {
     variables = {
       ANDROID_HOME = androidHome;
       JAVA_HOME = pkgs.openjdk17.home;
-      FLUTTER_HOME = flutterHome;
       PATH = [ "$PATH" "${flutterHome}/bin/" ];
     };
-    systemPackages = with pkgs;[
-      openjdk17 sdkmanager
-    ];
+    systemPackages = [ pkgs.openjdk17 pkgs.sdkmanager ];
   };
   programs = {
     nix-ld.enable = true;

@@ -36,17 +36,10 @@
       "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
-      "org/gnome/settings-daemon/plugins/color" = {
-        night-light-enabled = true;
-        night-light-schedule-automatic = false;
-        night-light-schedule-from = 6.0;
-        night-light-temperature = mkUint32 3532;
-      };
       "org/gnome/shell/extensions/just-perfection" = {
         panel = false;
         search = false;
         panel-in-overview = true;
-        panel-size = mkInt32 36;
       };
       "org/gnome/desktop/interface" = {
         monospace-font-name = "JetBrainsMono Nerd Font Bold 10";

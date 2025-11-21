@@ -1,25 +1,12 @@
-{ config, ... } : let
-  home = config.users.users.marko.home;
-  work = "cd ${home}/Documents/Code/Gitea";
-  berg = "cd ${home}/Documents/Code/Codeberg";
+{ ... } : let
   commons = [
     "########################################"
-    "################Directory###############"
-    "${berg}/NixOS"     "${berg}/Boardline" "${berg}/Template"
-    "${work}/Invoicing" "${work}/Expenses"  "${work}/Commons"
-    "################Commands################"
-    "sudo du -sh *" "diff -r" "find -printf '%T+ %p\n' | sort"
+    "sudo du -sh *" "diff -r" ''find -printf '%T+ %p\n' | sort''
     "sudo docker start vpn && docker exec -it vpn bash && docker stop vpn"
     "git reset --hard" "git log --patch --stat" "git diff" "git add . && git commit -m "
     "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#"
   ];
-  motorola = "/run/user/1000/gvfs/mtp:host=motorola_motorola_edge_50_neo_ZY22L9Q82F/Internal\ shared\ storage";
-  laptop = "/run/media/marko/3d553e7d-f851-4ec0-ad41-964f00f2a54b";
 in {
-  environment.variables = {
-    MOTOROLA = motorola;
-    LAPTOP = laptop;
-  };
   programs.bash = {
     shellInit = ''
       export HISTSIZE=5000
