@@ -10,7 +10,7 @@ in {
       JAVA_HOME = pkgs.openjdk17.home;
       PATH = [ "$PATH" "${flutterHome}/bin/" ];
     };
-    systemPackages = [ pkgs.openjdk17 pkgs.sdkmanager ];
+    systemPackages = with pkgs; [ openjdk17 sdkmanager unzip];
   };
   programs = {
     nix-ld.enable = true;
