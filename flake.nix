@@ -30,15 +30,11 @@
     nixosConfigurations = {
       intel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [
-          ./hardware-intel.nix
-        ];
+        modules = sharedModules ++ [ ./hardware-intel.nix ];
       };
       amd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [
-          ./hardware-amd.nix
-        ];
+        modules = sharedModules ++ [ ./hardware-amd.nix ];
       };
     };
   };

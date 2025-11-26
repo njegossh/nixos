@@ -5,7 +5,6 @@
   };
   time.timeZone = "Europe/Belgrade";
   security.rtkit.enable = true;
-
   services = {
     xserver.enable = true;
     displayManager = {
