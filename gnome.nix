@@ -42,12 +42,12 @@
         panel-in-overview = true;
       };
       "org/gnome/desktop/interface" = {
-        monospace-font-name = "FantasqueSansM Nerd Font Mono 10";
-        document-font-name  = "FantasqueSansM Nerd Font Mono 10";
-        font-name           = "FantasqueSansM Nerd Font Mono 10";
+        monospace-font-name = "FantasqueSansM Nerd Font Mono 12";
+        document-font-name  = "FantasqueSansM Nerd Font Mono 12";
+        font-name           = "FantasqueSansM Nerd Font Mono 12";
       };
       "org/gnome/desktop/wm/preferences" = {
-        titlebar-font = "FantasqueSansM Nerd Font Mono 10";
+        titlebar-font = "FantasqueSansM Nerd Font Mono 12";
       };
     };
   }];

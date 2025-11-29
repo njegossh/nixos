@@ -29,11 +29,6 @@
           enableTreesitter = true;
           dart.enable = true;
           nix.enable = true;
-          ts.enable = true;
-          css.enable = true;
-          clang.enable = true;
-          kotlin.enable = true;
-          java.enable = true;
         };
         lsp = {
           enable = true;
@@ -58,7 +53,6 @@
           mappings.toggle = "<C-b>";
         };
       };
-
     };
   };
 }

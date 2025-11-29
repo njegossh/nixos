@@ -2,10 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   documentation.nixos.enable = false;
 
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
+  programs.steam.enable = true;
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
