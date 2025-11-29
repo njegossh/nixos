@@ -10,13 +10,13 @@
     '';
   };
   fonts = {
-    packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+    packages = [ pkgs.nerd-fonts.fantasque-sans-mono ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-        sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-        serif     = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
+        monospace = [ "FantasqueSansM Nerd Font Mono" ];
+        sansSerif = [ "FantasqueSansM Nerd Font Mono" ];
+        serif     = [ "FantasqueSansM Nerd Font Mono" ];
       };
     };
   };
@@ -42,12 +42,12 @@
         panel-in-overview = true;
       };
       "org/gnome/desktop/interface" = {
-        monospace-font-name = "JetBrainsMono Nerd Font Bold 10";
-        document-font-name  = "JetBrainsMono Nerd Font Bold 10";
-        font-name           = "JetBrainsMono Nerd Font Bold 10";
+        monospace-font-name = "FantasqueSansM Nerd Font Mono 10";
+        document-font-name  = "FantasqueSansM Nerd Font Mono 10";
+        font-name           = "FantasqueSansM Nerd Font Mono 10";
       };
       "org/gnome/desktop/wm/preferences" = {
-        titlebar-font = "JetBrainsMono Nerd Font Bold 10";
+        titlebar-font = "FantasqueSansM Nerd Font Mono 10";
       };
     };
   }];

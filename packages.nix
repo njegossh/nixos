@@ -10,7 +10,7 @@
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
       fzf gnome-console nautilus foliate fragments
-      debootstrap gapless wlr-randr gamescope
+      debootstrap gapless gamescope
     ];
   };
   services = {
