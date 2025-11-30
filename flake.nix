@@ -36,6 +36,10 @@
         system = "x86_64-linux";
         modules = sharedModules ++ [ ./hardware-amd.nix ];
       };
+      hetzner = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = sharedModules ++ [ ./hardware-hetzner.nix ];
+      };
     };
   };
 }
