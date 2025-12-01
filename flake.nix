@@ -15,30 +15,32 @@
       home-manager.users.marko = import ./home.nix;
     };
     sharedModules = [
-      home-manager.nixosModules.home-manager
       nvf.nixosModules.default
-      ./configuration.nix
-      ./packages.nix
-      ./network.nix
-      ./flutter.nix
-      ./gnome.nix
       ./nvim.nix
       ./bash.nix
+    ];
+    clientModules = sharedModules ++ [ 
+      home-manager.nixosModules.home-manager
+      ./configuration.nix 
+      ./packages.nix 
+      ./network.nix
+      ./flutter.nix
+      ./gnome.nix 
       home
     ];
   in { 
     nixosConfigurations = {
       intel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [ ./hardware-intel.nix ];
+        modules = clientModules ++ [ ./hardware-intel.nix ];
       };
       amd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [ ./hardware-amd.nix ];
+        modules = clientModules ++ [ ./hardware-amd.nix ];
       };
       hetzner = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hardware-hetzner.nix ./bash.nix ];
+        modules = sharedModules ++ [ ./hardware-hetzner.nix ];
       };
     };
   };

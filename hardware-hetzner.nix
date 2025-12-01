@@ -45,11 +45,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
-   networking.firewall.allowedTCPPorts = [ 22 ];
-   
-   system.stateVersion = "24.11";
+  networking.firewall.allowedTCPPorts = [ 22 ];
+
+  system.stateVersion = "24.11";
 
   environment = {
-    systemPackages = with pkgs; [ fzf git neovim ];
+    systemPackages = with pkgs; [ fzf git ];
   };
 }
