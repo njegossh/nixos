@@ -53,7 +53,7 @@
 
   networking = {
     firewall = {
-      allowedTCPPorts = [ 
+      allowedTCPPorts = [
         4444 7657 #I2P 
         42410     #I2P Custom
         22        #SSH
