@@ -57,6 +57,6 @@
    system.stateVersion = "24.11";
 
   environment = {
-    systemPackages = with pkgs; [ fzf git nvim ];
+    systemPackages = with pkgs; [ fzf git neovim ];
   };
 }
