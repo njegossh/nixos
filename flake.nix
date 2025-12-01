@@ -38,7 +38,7 @@
       };
       hetzner = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [ ./hardware-hetzner.nix ];
+        modules = [ ./hardware-hetzner.nix ./bash.nix ./nvim.nix ];
       };
     };
   };
