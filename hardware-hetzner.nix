@@ -17,7 +17,7 @@
   };
   users.users = {
     root.hashedPassword = "!"; # Disable root login
-    username = {
+    marko = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       openssh.authorizedKeys.keys = [
@@ -50,6 +50,6 @@
    system.stateVersion = "24.11";
 
   environment = {
-    systemPackages = [ pkgs.fzf ];
+    systemPackages = with pkgs; [ fzf git nvim ];
   };
 }
