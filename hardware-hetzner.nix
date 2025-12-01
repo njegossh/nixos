@@ -1,4 +1,4 @@
-{ ... } : {
+{ pkgs, ... } : {
   fileSystems = {
     "/" = { device = "/dev/disk/by-label/nixos"; fsType = "ext4"; };
     "/boot" = { device = "/dev/disk/by-label/boot"; fsType = "ext4"; };
@@ -48,4 +48,8 @@
    networking.firewall.allowedTCPPorts = [ 22 ];
    
    system.stateVersion = "24.11";
+
+  environment = {
+    systemPackages = [ pkgs.fzf ];
+  };
 }
