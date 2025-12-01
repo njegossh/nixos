@@ -45,11 +45,29 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
   system.stateVersion = "24.11";
 
   environment = {
     systemPackages = with pkgs; [ fzf git ];
   };
+
+  networking = {
+    firewall = {
+      allowedTCPPorts = [ 
+        4444 7657 #I2P 
+        42410     #I2P Custom
+        22        #SSH
+      ];
+      allowedUDPPorts = [ 
+        21027     #Syncthing 
+        42410     #I2P Custom
+      ];
+    };
+  };
+
+  services.i2p.enable = true;
+  environment.etc."i2p/router.config".text = ''
+    i2np.udp.internalPort=42410
+    i2np.udp.port=42410
+  '';
 }
