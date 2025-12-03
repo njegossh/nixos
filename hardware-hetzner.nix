@@ -54,20 +54,15 @@
   networking = {
     firewall = {
       allowedTCPPorts = [
-        4444 7657 #I2P 
-        42410     #I2P Custom
-        22        #SSH
+        4444 7657 7654 7655 7656 7658 7659 #I2P 
+        22 #SSH
       ];
       allowedUDPPorts = [ 
-        21027     #Syncthing 
-        42410     #I2P Custom
+        21027 #Syncthing 
+        12346 #I2P
       ];
     };
   };
 
   services.i2p.enable = true;
-  environment.etc."i2p/router.config".text = ''
-    i2np.udp.internalPort=42410
-    i2np.udp.port=42410
-  '';
 }

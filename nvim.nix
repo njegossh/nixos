@@ -23,7 +23,7 @@
           transparent = true;
           enable = true;
           name = "gruvbox";
-          style = "light";
+          style = "dark";
         };
         languages = {
           enableTreesitter = true;
