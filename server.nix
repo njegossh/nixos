@@ -1,4 +1,4 @@
-{ pkgs } : {
+{ pkgs, ... } : {
   users.users = {
     root.hashedPassword = "!"; # Disable root login
     marko = {
