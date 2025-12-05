@@ -6,7 +6,7 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      fzf nautilus foliate fragments
+      fzf nautilus foliate fragments syncthing
       debootstrap gapless gamescope blackbox-terminal
     ];
   };

@@ -38,6 +38,7 @@
   };
 
   services.i2p.enable = true;
+  services.syncthing.enable = true;
 
   networking.wireguard = {
     enable = true;
