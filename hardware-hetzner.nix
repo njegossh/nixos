@@ -65,4 +65,12 @@
   };
 
   services.i2p.enable = true;
+
+  networking.wireguard = {
+    enable = true;
+    interfaces.wg0 = {
+      privateKeyFile = "/env/wg.key";
+      listenPort = 51820;
+    };
+  };
 }
