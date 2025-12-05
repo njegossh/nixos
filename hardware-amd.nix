@@ -6,7 +6,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  #boot.kernelParams = [ "nosmt=force" ];
 
   fileSystems."/" = { 
     device = "/dev/disk/by-uuid/b061db58-429e-4f48-bc39-00c8075c3855";

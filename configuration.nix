@@ -29,6 +29,10 @@
     trusted-users = [ "root" "marko" ];
     experimental-features = [ "nix-command" "flakes"];
   };
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
   virtualisation.docker.enable = true;
   system.stateVersion = "24.11"; 
 }

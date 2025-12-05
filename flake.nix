@@ -19,11 +19,13 @@
       ./nvim.nix
       ./bash.nix
     ];
+    serverModules = sharedModules ++ [
+      ./server.nix
+    ];
     clientModules = sharedModules ++ [ 
       home-manager.nixosModules.home-manager
       ./configuration.nix 
       ./packages.nix 
-      ./network.nix
       ./flutter.nix
       ./gnome.nix 
       home
@@ -40,7 +42,7 @@
       };
       hetzner = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = sharedModules ++ [ ./hardware-hetzner.nix ];
+        modules = serverModules ++ [ ./hardware-hetzner.nix ];
       };
     };
   };

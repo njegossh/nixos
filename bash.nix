@@ -1,9 +1,8 @@
 { ... } : let
   commons = [
-    "### ### ### ### ### ### ### ### ###"
-    "sudo du -sh *" "diff -r" ''find -printf '%C+ %p\n' | sort'' "compare "
     "sudo docker start vpn && docker exec -it vpn bash && docker stop vpn"
-    "git reset --hard" "git log --patch --stat" "git diff" "git add . && git commit -m "
+    "sudo du -sh *"
+    "git reset --hard" "git log --patch --stat" "git add . && git commit -m "
     "sudo nix flake update" "sudo nixos-rebuild switch --upgrade --flake .#"
   ];
 in {
@@ -28,15 +27,6 @@ in {
       }
 
       bind -x '"\C-p": _fzf_search_all'
-
-      compare() {
-        local DirA="''${1:-A}"
-        local DirB="''${2:-B}"
-
-        rsync -nach --exclude=* --include='*.txt' --include='*.md' "$DirA/" "$DirB/"
-        echo "==============="
-        rsync -nach --size-only --exclude='*.txt' --exclude='*.md' "$DirA/" "$DirB/"
-      }
     '';
   };
 }
