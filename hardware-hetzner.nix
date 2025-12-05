@@ -60,6 +60,7 @@
       allowedUDPPorts = [ 
         21027 #Syncthing 
         12346 #I2P
+        51820 #Wireguard
       ];
     };
   };
@@ -68,9 +69,6 @@
 
   networking.wireguard = {
     enable = true;
-    interfaces.wg0 = {
-      privateKeyFile = "/env/wg.key";
-      listenPort = 51820;
-    };
+    interfaces.wg0.privateKeyFile = "/env/wg.key";
   };
 }
