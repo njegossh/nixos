@@ -50,6 +50,9 @@
 
   networking.wireguard = {
     enable = true;
-    interfaces.wg0.privateKeyFile = "/env/wg.key";
+    interfaces.wg0 = {
+      ips = [ "0.0.0.0/0" ];
+      privateKeyFile = "/env/wg.key";
+    };
   };
 }
