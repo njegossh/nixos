@@ -53,6 +53,13 @@
     interfaces.wg0 = {
       ips = [ "0.0.0.0/0" ];
       privateKeyFile = "/env/wg.key";
+      peers = [
+        {
+          publicKey = "nxMSbLowRtKyR/4O/TMVZjkrOKh4aV51Ks8gerLamUU=";
+          allowedIPs = [ "0.0.0.0/0" ];
+          #endpoint = "10.0.0.2/32";
+        }
+      ];
     };
   };
 }
