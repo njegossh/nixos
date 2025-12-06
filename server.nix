@@ -48,18 +48,16 @@
   services.i2p.enable = true;
   services.syncthing.enable = true;
 
-  networking.wireguard = {
-    enable = true;
-    interfaces.wg0 = {
-      ips = [ "0.0.0.0/0" ];
-      privateKeyFile = "/env/wg.key";
-      peers = [
-        {
+  networking.wg-quick.interfaces.wg0 = {
+    address = [ "0.0.0.0/0" ];
+    dns = [ "127.0.0.1" ];
+    privateKeyFile = "/env/wg.key";
+    peers = [
+      {
           publicKey = "nxMSbLowRtKyR/4O/TMVZjkrOKh4aV51Ks8gerLamUU=";
           allowedIPs = [ "0.0.0.0/0" ];
-          #endpoint = "10.0.0.2/32";
-        }
-      ];
-    };
+          endpoint = "10.0.0.2/32";
+      }
+    ];
   };
 }
