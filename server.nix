@@ -20,22 +20,8 @@
   security.sudo.wheelNeedsPassword = false;
 
   services = {
+    i2p.enable = true;
     syncthing.enable = true;
-    i2pd = {
-      enable = true;
-      address = "188.245.164.116";
-      nat = true;
-      proto.httpProxy = {
-        enable = true;
-        port = 4444;
-        address = "10.0.0.1";
-      };
-      proto.http = {
-        enable = true;
-        port = 7070;
-        address = "10.0.0.1";
-      };
-    };
     openssh = {
       enable = true;
       settings = {
@@ -53,15 +39,13 @@
   networking = {
     firewall = {
       allowedTCPPorts = [
-        #4444 7657 7654 7655 7656 7658 7659 #I2P 
-        4444 7070 9000#I2PD
+        4444 7657 7654 7655 7656 7658 7659 #I2P 
         2200 #Syncthing
         22 #SSH
       ];
       allowedUDPPorts = [ 
         21027 #Syncthing 
-        #12346 #I2P
-        9000 #IwPD
+        12346 #I2P
         51820 #Wireguard
       ];
     };
