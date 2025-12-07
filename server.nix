@@ -55,6 +55,19 @@
         iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 7657 -j DNAT --to-destination 127.0.0.1:7657
       
         iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 4444 -j DNAT --to-destination 127.0.0.1:4444
+      
+      iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 7657 -j DNAT --to-destination 127.0.0.1:7657
+      iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 4444 -j DNAT --to-destination 127.0.0.1:4444
+      
+      # 3. SNAT (Source NAT) - Promeni izvornu adresu paketa
+      # Paket je namenjen 127.0.0.1, ali njegova izvorna adresa je i dalje 10.0.0.2.
+      # Da bi I2P odgovorio na 10.0.0.1, menjamo izvor sa 10.0.0.2 na VPS adrese.
+      # Koristimo 10.0.0.1 kao izvornu adresu.
+      iptables -t nat -A POSTROUTING -o lo -p tcp --dport 7657 -j SNAT --to-source 10.0.0.1
+      iptables -t nat -A POSTROUTING -o lo -p tcp --dport 4444 -j SNAT --to-source 10.0.0.1
+      
+      # NAPOMENA: Za Loopback saobraćaj, često je bolje koristiti MANGLE/OUTPUT lanac,
+      # ali POSTROUTING preko 'lo' (loopback) interfejsa je standardan trik.
       '';
     };
     nat = {
