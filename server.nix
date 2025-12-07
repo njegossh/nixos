@@ -28,7 +28,7 @@
       proto.httpProxy = {
         enable = true;
         port = 4444;
-        address = "10.0.0.1";
+        address = "0.0.0.0";
       };
       proto.http = {
         enable = true;
