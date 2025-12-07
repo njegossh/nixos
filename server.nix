@@ -53,6 +53,14 @@
     dns = [ "1.1.1.1" ];
     listenPort = 51820;
     privateKeyFile = "/env/wg.key";
+    postUp = ''
+  ip route add 0.0.0.0/0 dev wg0 table 50500
+  ip rule add not fwmark 50500 table 50500
+    '';
+    preDown = ''
+  ip rule del table 50500
+  ip route flush table 50500
+    '';
     peers = [
       {
         publicKey = "nxMSbLowRtKyR/4O/TMVZjkrOKh4aV51Ks8gerLamUU=";
