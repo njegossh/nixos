@@ -23,6 +23,8 @@
     syncthing.enable = true;
     i2pd = {
       enable = true;
+      address = "188.245.164.116";
+      nat = true;
       proto.httpProxy = {
         enable = true;
         port = 4444;
