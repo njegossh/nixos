@@ -36,27 +36,6 @@
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
-  #  environment.etc."i2p/router.config".text = ''
-  #routerconsole.host=0.0.0.0
-  #i2ptunnel.proxy.dsa.0.host=0.0.0.0
-  #'';
-
-  systemd.services.i2p.serviceConfig = {
-  # Koristimo opciju 'Service' koja nam dozvoljava da precizno dopunimo unit
-  # Koristimo '+' kao prefiks da bismo appendovali (dodali) na originalnu komandu
-  # Ali pošto I2P ne podržava append, moramo ga prepisati
-  
-  # Koristimo Environment File da bi injektovali opcije.
-  # I2P ruter skripta često čita konfiguracione opcije iz environment fajla.
-  EnvironmentFile = [
-    "-/etc/i2p/i2p-bind.env" # Ovo će biti novi fajl sa opcijama
-  ];
-};
-
-# Kreiramo Environment fajl sa opcijama koje se prosleđuju Java-i
-environment.etc."i2p/i2p-bind.env".text = ''
-  JAVA_OPTS="-Drouterconsole.host=0.0.0.0 -Di2ptunnel.proxy.dsa.0.host=0.0.0.0"
-'';
   networking = {
     firewall = {
       allowedTCPPorts = [
@@ -72,6 +51,10 @@ environment.etc."i2p/i2p-bind.env".text = ''
       extraCommands = ''
         iptables -A FORWARD -i wg0 -o enp1s0 -j ACCEPT
         iptables -A FORWARD -o wg0 -i enp1s0 -j ACCEPT
+
+        iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 7657 -j DNAT --to-destination 127.0.0.1:7657
+      
+        iptables -t nat -A PREROUTING -i wg0 -p tcp --dport 4444 -j DNAT --to-destination 127.0.0.1:4444
       '';
     };
     nat = {
