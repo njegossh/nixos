@@ -49,7 +49,7 @@
   services.syncthing.enable = true;
 
   networking.wg-quick.interfaces.wg0 = {
-    address = [ "10.0.0.1/24" ];
+    address = [ "10.0.0.1/32" ];
     dns = [ "1.1.1.1" ];
     listenPort = 51820;
     privateKeyFile = "/env/wg.key";
