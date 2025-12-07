@@ -56,7 +56,7 @@
     peers = [
       {
         publicKey = "nxMSbLowRtKyR/4O/TMVZjkrOKh4aV51Ks8gerLamUU=";
-        allowedIPs = [ "0.0.0.0/0" ];
+        allowedIPs = [ "10.0.0.2/32" ];
         #endpoint = "10.0.0.2/32";
       }
     ];
