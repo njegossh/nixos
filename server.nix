@@ -32,6 +32,7 @@
         enable = true;
         port = 7070;
         address = "0.0.0.0";
+        hostname = "10.0.0.1,localhost,*";
       };
     };
     openssh = {
