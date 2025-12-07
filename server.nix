@@ -42,11 +42,27 @@
   #'';
 
   systemd.services.i2p.serviceConfig = {
-    Environment = [
-      "I2P_ROUTERCONSOLE_HOST=0.0.0.0" # Binduje Web Console (7657)
-      "I2P_HTTPPROXY_HOST=0.0.0.0"     # Binduje HTTP Proxy (4444)
-    ];
-  };
+  # Opcionalno, ali dobro je imati
+  # Restart = "always";
+  
+  # Preslikaj originalnu ExecStart komandu i dodaj Java argumente
+  ExecStart = [
+    # Putanja do NixOS I2P skripte, dobijena iz ExecStart:
+    # /nix/store/9nhfa777704qvh6a2x2bdp9n2vbknjxv-i2p-2.10.0/bin/i2prouter
+    # Pošto je putanja dugačka, referenciraćemo je preko $Executable putanje,
+    # što je standardan i bolji način u NixOS-u.
+    
+    # Prvi put moramo pozvati ExecStart direktno sa argumentima
+    # Dodajemo Java System Properties:
+    
+    "${pkgs.i2p}/bin/i2prouter"
+    
+    # I2P skripta dozvoljava postavljanje ovih opcija pre pokretanja rutera:
+    "-Drouterconsole.host=0.0.0.0"
+    "-Di2ptunnel.proxy.dsa.0.host=0.0.0.0"
+    
+  ];
+};
 
   networking = {
     firewall = {
