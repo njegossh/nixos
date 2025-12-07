@@ -54,6 +54,23 @@
       externalInterface = "enp1s0";
       internalInterfaces = [ "wg0" ];
       internalIPs = [ "10.0.0.0/24" ];
+      forwardPorts = [
+        {
+          sourcePort = 4444;  # I2P HTTP proxy
+          destination = { host = "10.0.0.2"; port = 4444; };
+          proto = "tcp";
+        }
+        {
+          sourcePort = 7657;  # I2P eepsite
+          destination = { host = "10.0.0.2"; port = 7657; };
+          proto = "tcp";
+        }
+        {
+          sourcePort = 12346; # I2P UDP (if needed)
+          destination = { host = "10.0.0.2"; port = 12346; };
+          proto = "udp";
+        }
+      ];
     };
     wg-quick.interfaces.wg0 = {
       address = [ "10.0.0.1/24" ];
