@@ -36,6 +36,11 @@
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
+  environment.etc."i2p/router.config".text = ''
+  routerconsole.host=0.0.0.0
+  i2ptunnel.proxy.dsa.0.host=0.0.0.0
+  '';
+
   networking = {
     firewall = {
       allowedTCPPorts = [
@@ -58,11 +63,6 @@
       externalInterface = "enp1s0";
       internalInterfaces = [ "wg0" ];
       internalIPs = [ "10.0.0.0/24" ];
-      forwardPorts = [
-        { sourcePort = 4444; destination = "10.0.0.2:4444"; proto = "tcp"; }
-        { sourcePort = 7657; destination = "10.0.0.2:7657"; proto = "tcp"; }
-        { sourcePort = 12346; destination = "10.0.0.2:12346"; proto = "udp"; }
-      ];
     };
     wg-quick.interfaces.wg0 = {
       address = [ "10.0.0.1/24" ];
