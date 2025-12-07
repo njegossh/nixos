@@ -36,10 +36,17 @@
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
-  environment.etc."i2p/router.config".text = ''
-  routerconsole.host=0.0.0.0
-  i2ptunnel.proxy.dsa.0.host=0.0.0.0
-  '';
+  #  environment.etc."i2p/router.config".text = ''
+  #routerconsole.host=0.0.0.0
+  #i2ptunnel.proxy.dsa.0.host=0.0.0.0
+  #'';
+
+  systemd.services.i2p.serviceConfig = {
+    Environment = [
+      "I2P_ROUTERCONSOLE_HOST=0.0.0.0" # Binduje Web Console (7657)
+      "I2P_HTTPPROXY_HOST=0.0.0.0"     # Binduje HTTP Proxy (4444)
+    ];
+  };
 
   networking = {
     firewall = {
