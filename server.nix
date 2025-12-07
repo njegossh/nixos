@@ -48,6 +48,10 @@
         12346 #I2P
         51820 #Wireguard
       ];
+      extraCommands = ''
+        iptables -A FORWARD -i wg0 -o enp1s0 -j ACCEPT
+        iptables -A FORWARD -o wg0 -i enp1s0 -j ACCEPT
+      '';
     };
     nat = {
       enable = true;
