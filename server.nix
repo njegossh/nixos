@@ -44,9 +44,16 @@
       ];
     };
   };
-
+  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   services.i2p.enable = true;
   services.syncthing.enable = true;
+
+  networking.nat = {
+    enable = true;
+    externalInterface = "enp1s0";
+    internalInterfaces = [ "wg0" ];
+    internalIPs = [ "10.0.0.0/24" ];
+  };
 
   networking.wg-quick.interfaces.wg0 = {
     address = [ "10.0.0.1/24" ];
