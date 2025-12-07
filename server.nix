@@ -52,13 +52,14 @@
     firewall = {
       allowedTCPPorts = [
         #4444 7657 7654 7655 7656 7658 7659 #I2P 
-        4444 7070 #I2PD
+        4444 7070 9000#I2PD
         2200 #Syncthing
         22 #SSH
       ];
       allowedUDPPorts = [ 
         21027 #Syncthing 
-        12346 #I2P
+        #12346 #I2P
+        9000 #IwPD
         51820 #Wireguard
       ];
     };
