@@ -16,7 +16,7 @@
     };
     sharedModules = [
       nvf.nixosModules.default
-      ./nvim.nix
+      ./vim.nix
       ./bash.nix
     ];
     serverModules = sharedModules ++ [
