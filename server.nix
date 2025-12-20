@@ -32,7 +32,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ fzf git python3 ];
+  environment.systemPackages = with pkgs; [ fzf git ];
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
