@@ -7,6 +7,7 @@
         name = "Marko Petrovic";
         email = "markopetrovic3939@gmail.com";
       }; 
+      settings.pull.rebase = true;
     };
     firefox = {
       enable = true;

@@ -15,7 +15,7 @@ in {
     promptInit = ''
       PS1="[ \w ] \$\[\033[0m\] "
 
-      commons=(${builtins.concatStringsSep "\n        " (map (c: ''"${c}"'') commons)})
+      commons=(${builtins.concatStringsSep "\n " (map (c: ''"${c}"'') commons)})
 
       _fzf_search_all() {
         local hist=$(history | sed 's/^[ ]*[0-9]*[ ]*//')
