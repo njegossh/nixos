@@ -1,7 +1,7 @@
 { pkgs, lib, ... } : {
-  environment.systemPackages = (with pkgs.gnomeExtensions; [
+  environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell just-perfection rounded-window-corners-reborn
-  ]) ++ [ pkgs.nautilus-open-any-terminal ];
+  ];
   services.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
