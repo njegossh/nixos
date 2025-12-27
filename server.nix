@@ -32,7 +32,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ fzf git ];
+  environment.systemPackages = with pkgs; [ fzf git hydroxide ];
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 

@@ -6,12 +6,11 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      fzf nautilus foliate fragments
-      debootstrap gapless gamescope blackbox-terminal
+      fzf nautilus python3 cmus
+      debootstrap gamescope blackbox-terminal
     ];
   };
   services = {
-    syncthing.enable = true;
     gnome.core-apps.enable = false;
     xserver.excludePackages = [ pkgs.xterm ];
   };
