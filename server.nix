@@ -48,6 +48,7 @@
         12346 #I2P
         51820 #Wireguard
       ];
+      trustedInterfaces = [ "wg0" ];
     };
     nat = {
       enable = true;
