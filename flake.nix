@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { home-manager, nixpkgs, nvf, ... } : let
+  outputs = { self, home-manager, nixpkgs, nvf, ... } : let
     home = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
@@ -30,19 +30,22 @@
       ./gnome.nix 
       home
     ];
-  in { 
+  in {
+    overlays.default = final: prev: {
+      compare = final.writeShellScriptBin "compare" (builtins.readFile ./compare.sh);
+    };
     nixosConfigurations = {
       intel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = clientModules ++ [ ./hardware-intel.nix ];
+        modules = clientModules ++ [ ./hardware-intel.nix { nixpkgs.overlays = [ self.overlays.default ]; }];
       };
       amd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = clientModules ++ [ ./hardware-amd.nix ];
+        modules = clientModules ++ [ ./hardware-amd.nix { nixpkgs.overlays = [ self.overlays.default ]; }];
       };
       hetzner = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = serverModules ++ [ ./hardware-hetzner.nix ];
+        modules = serverModules ++ [ ./hardware-hetzner.nix { nixpkgs.overlays = [ self.overlays.default ]; }];
       };
     };
   };
