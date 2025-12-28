@@ -6,8 +6,8 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      fzf nautilus python3 cmus compare
-      debootstrap gamescope blackbox-terminal
+      nautilus python3 cmus compare
+      gamescope blackbox-terminal
     ];
   };
   services = {
