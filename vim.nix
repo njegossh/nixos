@@ -1,58 +1,55 @@
 { ... } : {
-  programs = {
-    neovim.enable = true;
-    nvf = {
-      enable = true;
-      settings.vim = {
-        undoFile.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-        clipboard = {
-          enable = true;
-          providers.wl-copy.enable = true;
-          registers = "unnamedplus";
+  programs.nvf = {
+    enable = true;
+    settings.vim = {
+      undoFile.enable = true;
+      autocomplete.nvim-cmp.enable = true;
+      clipboard = {
+        enable = true;
+        providers.wl-copy.enable = true;
+        registers = "unnamedplus";
+      };
+      options = {
+        tabstop = 2;
+        shiftwidth = 2;
+        laststatus = 0;
+        number = false;
+        relativenumber = false;
+        signcolumn = "auto";
+      };
+      theme = {
+        transparent = true;
+        enable = true;
+        name = "gruvbox";
+        style = "light";
+      };
+      languages = {
+        enableTreesitter = true;
+        python.enable = true;
+        dart.enable = true;
+        nix.enable = true;
+      };
+      lsp = {
+        enable = true;
+        #formatOnSave = true;
+        mappings = {
+          hover = "K";
+          codeAction = "L";
+          goToDefinition = "gd";
+          renameSymbol = "<leader>rn";
         };
-        options = {
-          tabstop = 2;
-          shiftwidth = 2;
-          laststatus = 0;
-          number = false;
-          relativenumber = false;
-          signcolumn = "auto";
+      };
+      telescope = {
+        enable = true;
+        mappings = {
+          findFiles = "<C-P>";
+          buffers = "<C-[>";
         };
-        theme = {
-          transparent = true;
-          enable = true;
-          name = "gruvbox";
-          style = "light";
-        };
-        languages = {
-          enableTreesitter = true;
-          python.enable = true;
-          dart.enable = true;
-          nix.enable = true;
-        };
-        lsp = {
-          enable = true;
-          #formatOnSave = true;
-          mappings = {
-            hover = "K";
-            codeAction = "L";
-            goToDefinition = "gd";
-            renameSymbol = "<leader>rn";
-          };
-        };
-        telescope = {
-          enable = true;
-          mappings = {
-            findFiles = "<C-P>";
-            buffers = "<C-[>";
-          };
-        };
-        filetree.nvimTree = {
-          enable = true;
-          openOnSetup = false;
-          mappings.toggle = "<C-b>";
-        };
+      };
+      filetree.nvimTree = {
+        enable = true;
+        openOnSetup = false;
+        mappings.toggle = "<C-b>";
       };
     };
   };
