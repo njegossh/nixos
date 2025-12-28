@@ -16,9 +16,7 @@
       ];
     };
   };
-
   security.sudo.wheelNeedsPassword = false;
-
   services = {
     i2p.enable = true;
     syncthing.enable = true;
@@ -31,11 +29,8 @@
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [ fzf git hydroxide ];
-
+  environment.systemPackages = with pkgs; [ neovim git hydroxide ];
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
-
   networking = {
     firewall = {
       allowedTCPPorts = [

@@ -1,7 +1,6 @@
 { pkgs, ... } : {
   nixpkgs.config.allowUnfree = true;
   documentation.nixos.enable = false;
-
   programs.steam.enable = true;
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
