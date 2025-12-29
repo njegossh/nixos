@@ -19,6 +19,27 @@
   security.sudo.wheelNeedsPassword = false;
   services = {
     i2p.enable = true;
+    pihole-ftl = {
+      enable = true;
+      settings = {
+        webserver.listen = [ "10.0.0.1:80" ];
+        dns.listen.local = true;
+        dns.upstream = [ "9.9.9.9" "149.112.112.112" ];
+        dns.listening = [ "wg0" ];
+      };
+      lists = [{
+        url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+        enabled = true;
+        type = "block";
+        description = "StevenBlack's unified hosts with ad/tracking/malware domains";
+      }];
+      queryLogDeleter = {
+        enable = true;
+        age = 30;
+      };
+      openFirewallDNS = true;
+    };
+    pihole-web.enable = true;
     searx = {
       enable = true;
       redisCreateLocally = true;

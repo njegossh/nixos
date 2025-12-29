@@ -5,7 +5,7 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      nautilus python3 cmus neovim
+      nautilus python3 cmus neovim epiphany
       gamescope blackbox-terminal mutt
     ];
   };
