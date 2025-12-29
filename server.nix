@@ -39,7 +39,10 @@
       };
       openFirewallDNS = true;
     };
-    pihole-web.enable = true;
+    pihole-web = {
+      enable = true;
+      ports = [ 8080 ];
+    };
     searx = {
       enable = true;
       redisCreateLocally = true;
