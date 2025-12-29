@@ -19,7 +19,10 @@
   security.sudo.wheelNeedsPassword = false;
   services = {
     i2p.enable = true;
-    syncthing.enable = true;
+    searx = {
+      enable = true;
+      redisCreateLocally = true;
+    };
     openssh = {
       enable = true;
       settings = {
