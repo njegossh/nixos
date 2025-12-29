@@ -27,26 +27,12 @@
         dns.upstream = [ "9.9.9.9" "149.112.112.112" ];
         dns.listening = [ "wg0" ];
       };
-      lists = [
-        {
-          url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
-          enabled = true;
-          type = "block";
-          description = "StevenBlack's unified hosts with ad/tracking/malware domains";
-        }
-        {
-          url = "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt";
-          enabled = true;
-          type = "block";
-          description = "AdGuard DNS filter";
-        }
-        {
-          url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt";
-          enabled = true;
-          type = "block";
-          description = "Hagezi's adblock list";
-        }
-      ];
+      lists = [{
+        url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+        enabled = true;
+        type = "block";
+        description = "StevenBlack's unified hosts with ad/tracking/malware domains";
+      }];
       queryLogDeleter = {
         enable = true;
         age = 30;
