@@ -49,6 +49,10 @@
       "org/gnome/desktop/wm/preferences" = {
         titlebar-font = "FantasqueSansM Nerd Font Mono 12";
       };
+      "org/gnome/system/proxy" = {
+        mode = "auto";
+        autoconfig-url = "file:///etc/proxy.pac";
+      };
     };
   }];
 }

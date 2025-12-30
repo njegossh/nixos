@@ -1,12 +1,4 @@
-{ ... } : {
-  programs.dconf.enable = true;
-  programs.dconf.settings = {
-    "org/gnome/system/proxy" = {
-      mode = "auto";
-      autoconfig-url = "file:///etc/proxy.pac";
-    };
-  };
-
+{ ... } : { 
   environment.etc."proxy.pac".text = ''
     function FindProxyForURL(url, host) {
       if (dnsDomainIs(host, ".i2p")) {
