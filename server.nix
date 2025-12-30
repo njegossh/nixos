@@ -18,7 +18,14 @@
   };
   security.sudo.wheelNeedsPassword = false;
   services = {
-    i2p.enable = true;
+    i2pd = {
+      enable = true;
+      address = "10.0.0.1"; 
+      proto = {
+        http.port = 4444;
+        webui.port = 7657; 
+      };
+    };
     pihole-ftl = {
       enable = true;
       settings = {
@@ -37,7 +44,6 @@
         enable = true;
         age = 30;
       };
-      openFirewallDNS = true;
     };
     pihole-web = {
       enable = true;
@@ -53,9 +59,7 @@
           secret_key = "hehe";
           real_ip_header = "X-Forwarded-For";
         };
-        search = {
-          autocomplete = "google";
-        };
+        search.autocomplete = "google";
       };
     };
     openssh = {
@@ -72,12 +76,12 @@
   networking = {
     firewall = {
       allowedTCPPorts = [
-        4444 7657 7654 7655 7656 7658 7659 #I2P 
-        2200 #Syncthing
-        22 #SSH
+        22   #SSH
+        80 8080 #Pi-hole
+        4444 #I2P 
+        8888 #Searx
       ];
       allowedUDPPorts = [ 
-        21027 #Syncthing 
         12346 #I2P
         51820 #Wireguard
       ];

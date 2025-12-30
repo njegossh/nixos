@@ -26,6 +26,7 @@
       home-manager.nixosModules.home-manager
       ./configuration.nix 
       ./packages.nix 
+      ./network.nix
       ./flutter.nix
       ./gnome.nix 
       home
