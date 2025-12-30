@@ -21,10 +21,7 @@
     i2pd = {
       enable = true;
       address = "10.0.0.1"; 
-      proto = {
-        http.port = 4444;
-        webui.port = 7657; 
-      };
+      proto.http.port = 4444;
     };
     pihole-ftl = {
       enable = true;
