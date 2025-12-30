@@ -6,7 +6,7 @@
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
       nautilus python3 cmus neovim epiphany
-      gamescope blackbox-terminal mutt
+      gamescope blackbox-terminal showtime
     ];
   };
   services = {
