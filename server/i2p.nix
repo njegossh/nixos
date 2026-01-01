@@ -2,10 +2,10 @@
   services.i2pd = {
     enable = true;
     address = "10.0.0.1"; 
-    proto.http = {
+    proto.socks = {
       enable = true;
       port = 4444;
-      address = "0.0.0.0"; 
+      address = "0.0.0.0";
     };
   };
   networking.firewall = {
