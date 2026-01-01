@@ -8,8 +8,8 @@
       address = "0.0.0.0"; 
     };
   };
-  networking.firewall = {
-    allowedTCPPorts = [ 22 4444 ];
+  networking.firewall.interfaces.wg0 = {
+    allowedTCPPorts = [ 4444 ];
     allowedUDPPorts = [ 12346 ];
   };
 }

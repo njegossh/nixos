@@ -12,8 +12,5 @@
       search.autocomplete = "google";
     };
   };
-
-  networking.firewall = {
-    interfaces.wg0.allowedTCPPorts = [ 8888 ];
-  };
+  networking.firewall.interfaces.wg0.allowedTCPPorts = [ 8888 ];
 }

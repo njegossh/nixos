@@ -24,5 +24,5 @@
       ports = [ 8080 ];
     };
   };
-  networking.firewall.allowedTCPPorts = [ 80 8080 ];
+  networking.firewall.interfaces.wg0.allowedTCPPorts = [ 80 8080 ];
 }
