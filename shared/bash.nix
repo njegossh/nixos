@@ -22,9 +22,12 @@ in {
 
 #Common commands
 #sudo docker start vpn && docker exec -it vpn bash && docker stop vpn
-#sudo du -sh *
+#df -h /
 #git reset --git reset --hard
 #git log --patch --stat 
 #git add . && git commit -m ""
+
+
 #sudo nix flake update 
+#sudo nix-collect-garbage --delete-old && nix-store --gc
 #sudo nixos-rebuild switch --upgrade --flake .#
