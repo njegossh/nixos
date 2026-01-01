@@ -11,7 +11,4 @@
     };
     initrd.availableKernelModules = [ "sd_mod" "virtio_scsi" "virtio_pci" "ahci" "xhci_pci" "ext4" "sr_mod" ];
   };
-  time.timeZone = "Europe/London";
-  nix.settings.experimental-features = "nix-command flakes";
-  system.stateVersion = "24.11";
 }

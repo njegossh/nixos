@@ -12,38 +12,42 @@
     home = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.marko = import ./home.nix;
+      home-manager.users.marko = import ./client/home.nix;
     };
     sharedModules = [
       nvf.nixosModules.default
-      ./vim.nix
-      ./bash.nix
+      ./shared/vim.nix
+      ./shared/bash.nix
     ];
     serverModules = sharedModules ++ [
-      ./server.nix
+      ./server/adblock.nix
+      ./server/configuration.nix
+      ./server/i2p.nix
+      ./server/searx.nix
+      ./server/ssh.nix
+      ./server/wireguard.nix
     ];
     clientModules = sharedModules ++ [ 
       home-manager.nixosModules.home-manager
-      ./configuration.nix 
-      ./packages.nix 
-      ./network.nix
-      ./flutter.nix
-      ./gnome.nix 
+      ./client/configuration.nix 
+      ./client/packages.nix 
+      ./client/flutter.nix
+      ./client/gnome.nix 
       home
     ];
   in { 
     nixosConfigurations = {
       intel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = clientModules ++ [ ./hardware-intel.nix ];
+        modules = clientModules ++ [ ./client/hardware-intel.nix ];
       };
       amd = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = clientModules ++ [ ./hardware-amd.nix ];
+        modules = clientModules ++ [ ./client/hardware-amd.nix ];
       };
       hetzner = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = serverModules ++ [ ./hardware-hetzner.nix ];
+        modules = serverModules ++ [ ./server/hardware-hetzner.nix ];
       };
     };
   };

@@ -25,6 +25,11 @@
             Business =  { color = "yellow";   icon = "briefcase";   id = 6; };
           };
         };
+        i2p = {
+          id = 1;
+          name = "I2P";
+          isDefault = false;
+        };
       };
     };
   };
