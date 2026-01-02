@@ -20,8 +20,8 @@
     database.createLocally = true;
     redis.createLocally = true;
     configureNginx = false;
-    listenWeb = "10.0.0.1";
-    listenHttp = "10.0.0.1";
+    listenWeb = 9000;
+    listenHttp = 9000;
     localDomain = "peertube";
     secrets.secretsFile = "/etc/peertube/secrets.env";
   };
