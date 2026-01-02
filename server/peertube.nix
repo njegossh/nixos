@@ -30,29 +30,28 @@
         instance.name = "PeerTube Test Server";
       };
     };
-  };
-
-  postgresql = {
-    enable = true;
-    enableTCPIP = true;
-    authentication = ''
+    postgresql = {
+      enable = true;
+      enableTCPIP = true;
+      authentication = ''
       hostnossl peertube_local peertube_test 127.0.0.1/32 md5
-    '';
-    initialScript = pkgs.writeText "postgresql_init.sql" ''
+      '';
+      initialScript = pkgs.writeText "postgresql_init.sql" ''
       CREATE ROLE peertube_test LOGIN PASSWORD 'test123';
       CREATE DATABASE peertube_local TEMPLATE template0 ENCODING UTF8;
       GRANT ALL PRIVILEGES ON DATABASE peertube_local TO peertube_test;
       \connect peertube_local
       CREATE EXTENSION IF NOT EXISTS pg_trgm;
       CREATE EXTENSION IF NOT EXISTS unaccent;
-    '';
-  };
+      '';
+    };
 
-  redis.servers.peertube = {
-    enable = true;
-    bind = "0.0.0.0";
-    requirePass = "test123";
-    port = 31638;
+    redis.servers.peertube = {
+      enable = true;
+      bind = "0.0.0.0";
+      requirePass = "test123";
+      port = 31638;
+    };
   };
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 9000 ];
 }
