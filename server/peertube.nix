@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ...}:
 {
   environment.etc."peertube/secrets.env" = {
     text = ''
@@ -32,6 +32,7 @@
       enable = true;
       localDomain = "10.0.0.1";
       enableWebHttps = false;
+      secrets.secretsFile = "/etc/peertube/secrets.env";
       database = {
         host = "127.0.0.1";
         name = "peertube_local";
