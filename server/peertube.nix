@@ -22,7 +22,7 @@
     configureNginx = false;
     listenWeb = 9000;
     listenHttp = 9000;
-    localDomain = "peertube";
+    localDomain = "10.0.0.1";
     secrets.secretsFile = "/etc/peertube/secrets.env";
   };
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 9000 ];
