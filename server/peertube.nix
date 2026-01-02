@@ -47,6 +47,8 @@
       settings = {
         listen.hostname = "0.0.0.0";
         instance.name = "PeerTube Test Server";
+        webserver.hostname = "10.0.0.1";
+        webserver.port = 9000;
       };
     };
 
@@ -73,6 +75,11 @@
       port = 31638;
     };
   };
+
+  # Environment variable for PeerTube listen address
+  systemd.services.peertube.serviceConfig.Environment = [
+    "PEERTUBE_LISTEN_HOSTNAME=0.0.0.0"
+  ];
 
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 9000 ];
 }
