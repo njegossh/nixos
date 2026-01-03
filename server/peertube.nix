@@ -17,11 +17,6 @@
     group = "peertube";
   };
 
-  networking.extraHosts = ''
-    127.0.0.1 peertube.local
-    10.0.0.1 peertube.local
-  '';
-
   environment.etc = {
     "peertube/password-posgressql-db".text = "test123";
     "peertube/password-redis-db".text = "test123";
