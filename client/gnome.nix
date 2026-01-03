@@ -39,6 +39,7 @@
       "org/gnome/shell/extensions/just-perfection" = {
         panel = false;
         search = false;
+        panel-size = mkUint32 37;
         panel-in-overview = true;
       };
       "org/gnome/desktop/interface" = {
@@ -48,10 +49,6 @@
       };
       "org/gnome/desktop/wm/preferences" = {
         titlebar-font = "FantasqueSansM Nerd Font Mono 12";
-      };
-      "org/gnome/system/proxy" = {
-        mode = "auto";
-        autoconfig-url = "file:///etc/proxy.pac";
       };
     };
   }];

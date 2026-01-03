@@ -27,6 +27,7 @@
       ./server/ssh.nix
       ./server/wireguard.nix
       ./server/peertube.nix
+      ./server/s3.nix
     ];
     clientModules = sharedModules ++ [ 
       home-manager.nixosModules.home-manager
