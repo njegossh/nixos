@@ -19,7 +19,7 @@
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "fuse" ];
   };
   systemd.services = {
     "getty@tty1".enable = false;
