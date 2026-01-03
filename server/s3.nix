@@ -1,4 +1,5 @@
-{ ... } : {
+{ pkgs, ... } : {
+  environment.systemPackages = with pkgs; [ mc ];
   services.minio = {
     enable = true;
     listenAddress = "10.0.0.1:5353";
