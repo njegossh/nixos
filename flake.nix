@@ -33,7 +33,6 @@
       ./client/configuration.nix 
       ./client/packages.nix 
       ./client/flutter.nix
-      ./client/chicago-95.nix
       ./client/gnome.nix 
       home
     ];
