@@ -5,8 +5,8 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      nautilus neovim rclone cmus epiphany
-      blackbox-terminal wine
+      nautilus neovim rclone cmus 
+      blackbox-terminal epiphany foliate
     ];
   };
 }

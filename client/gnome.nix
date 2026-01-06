@@ -38,6 +38,7 @@
       ];
       "org/gnome/shell/extensions/just-perfection" = {
         panel-in-overview = true;
+        show-apps-button = false;
         search = false;
         panel = false;
       };
