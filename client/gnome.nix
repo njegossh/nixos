@@ -1,6 +1,6 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell just-perfection rounded-window-corners-reborn
+    blur-my-shell just-perfection #rounded-window-corners-reborn
   ];
   services.desktopManager.gnome = {
     enable = true;
@@ -24,7 +24,7 @@
     settings = with lib.gvariant; {
       "org/gnome/desktop/session".idle-delay = mkUint32 0;
       "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
-        rounded-window-corners-reborn.extensionUuid
+        #rounded-window-corners-reborn.extensionUuid
         just-perfection.extensionUuid
         blur-my-shell.extensionUuid
       ];
@@ -37,10 +37,9 @@
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
       "org/gnome/shell/extensions/just-perfection" = {
-        panel = false;
-        search = false;
-        panel-size = mkUint32 37;
         panel-in-overview = true;
+        search = false;
+        panel = false;
       };
       "org/gnome/desktop/interface" = {
         monospace-font-name = "FantasqueSansM Nerd Font Mono 12";
