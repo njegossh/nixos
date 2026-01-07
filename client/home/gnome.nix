@@ -1,7 +1,9 @@
 { lib, pkgs, ... } : {
   xdg.desktopEntries.nvim = { name = ""; noDisplay = true; };
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell just-perfection
+  home.packages = with pkgs; [
+    gnomeExtensions.blur-my-shell 
+    gnomeExtensions.just-perfection
+    nerd-fonts.fantasque-sans-mono
   ];
   dconf.settings = with lib.gvariant; {
     "org/gnome/mutter".experimental-features = [
