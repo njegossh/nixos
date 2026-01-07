@@ -1,30 +1,16 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell just-perfection #rounded-window-corners-reborn
+    blur-my-shell just-perfection
   ];
-  services.desktopManager.gnome = {
-    enable = true;
-    extraGSettingsOverrides = ''
-      [org.gnome.mutter]
-      experimental-features=['scale-monitor-framebuffer']
-    '';
-  };
-  fonts = {
-    packages = [ pkgs.nerd-fonts.fantasque-sans-mono ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace = [ "FantasqueSansM Nerd Font Mono" ];
-        sansSerif = [ "FantasqueSansM Nerd Font Mono" ];
-        serif     = [ "FantasqueSansM Nerd Font Mono" ];
-      };
-    };
-  };
+  services.desktopManager.gnome.enable = true;
+  fonts.packages = [ pkgs.nerd-fonts.fantasque-sans-mono ];
   programs.dconf.profiles.user.databases = [{
     settings = with lib.gvariant; {
+      "org/gnome/mutter".experimental-features = [
+        "scale-monitor-framebuffer"
+      ];
       "org/gnome/desktop/session".idle-delay = mkUint32 0;
       "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
-        #rounded-window-corners-reborn.extensionUuid
         just-perfection.extensionUuid
         blur-my-shell.extensionUuid
       ];
