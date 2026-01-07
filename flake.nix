@@ -12,7 +12,11 @@
     home = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.marko = import ./client/home.nix;
+      home-manager.users.marko.imports = [
+        ./client/home/configuration.nix 
+        ./client/home/firefox.nix 
+        ./client/home/gnome.nix
+      ];
     };
     sharedModules = [
       nvf.nixosModules.default
