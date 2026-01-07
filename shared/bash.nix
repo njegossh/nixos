@@ -19,18 +19,20 @@ in {
 
 
       mount-s3() {
-          if ! ip addr show wg0 > /dev/null 2>&1; then
-              echo "Connect wireguard"
+        if ! ip addr show wg0 > /dev/null 2>&1; then
+              echo "❌ Connect wireguard"
               return 1
           fi
 
-          read -rs "pass1?Unesi lozinku za fajlove: " && echo
-          read -rs "pass2?Unesi lozinku za imena: " && echo
+          # Bash sintaksa za read: -p za prompt, -s za secret
+          read -rs -p "Unesi lozinku za fajlove: " pass1 && echo
+          read -rs -p "Unesi lozinku za imena: " pass2 && echo
 
+          # Koristimo ''$ da bi Nix pustio Bash varijablu kroz string
           rclone --config /etc/rclone.conf mount minio-enc: ~/Documents/Hetzner \
             --vfs-cache-mode full \
-            --crypt-password "$pass1" \
-            --crypt-password2 "$pass2" \
+            --crypt-password "''${pass1}" \
+            --crypt-password2 "''${pass2}" \
             --daemon
 
           echo "✅ S3 Bucket je mount-ovan na ~/Documents/Hetzner"
