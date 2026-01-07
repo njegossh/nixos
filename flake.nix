@@ -37,7 +37,6 @@
       ./client/configuration.nix 
       ./client/packages.nix 
       ./client/flutter.nix
-      ./client/gnome.nix
       ./client/minio.nix 
       home
     ];
