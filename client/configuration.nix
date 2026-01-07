@@ -6,6 +6,7 @@
   time.timeZone = "Europe/Belgrade";
   security.rtkit.enable = true;
   services = {
+    desktopManager.gnome.enable = true;
     displayManager = {
       gdm.enable = true;
       autoLogin.user = "marko";
