@@ -14,7 +14,7 @@
     type = s3
     provider = Minio
     access_key_id = marko
-    secret_access_key = sifra
+    secret_access_key = aaa-mnogo-jaka-sifra-aaa
     endpoint = http://10.0.0.1:5353
     region = us-east-1
 
