@@ -20,7 +20,7 @@
 
     [minio-enc]
     type = crypt
-    remote = minio-server:test-bucket/encrypted_data
+    remote = minio-server:marko-documents
     filename_encryption = standard
     directory_name_encryption = true
   '';
