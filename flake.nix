@@ -20,25 +20,26 @@
     };
     sharedModules = [
       nvf.nixosModules.default
-      ./shared/vim.nix
       ./shared/bash.nix
+      ./shared/vim.nix
     ];
     serverModules = sharedModules ++ [
-      ./server/adblock.nix
       ./server/configuration.nix
-      ./server/i2p.nix
-      ./server/searx.nix
-      ./server/ssh.nix
       ./server/wireguard.nix
       ./server/peertube.nix
-      ./server/s3.nix
+      ./server/adblock.nix
+      ./server/searx.nix
+      ./server/minio.nix
+      ./server/ssh.nix
+      ./server/i2p.nix
     ];
     clientModules = sharedModules ++ [ 
       home-manager.nixosModules.home-manager
       ./client/configuration.nix 
       ./client/packages.nix 
       ./client/flutter.nix
-      ./client/gnome.nix 
+      ./client/gnome.nix
+      ./client/minio.nix 
       home
     ];
   in { 
