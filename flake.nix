@@ -26,7 +26,6 @@
     serverModules = sharedModules ++ [
       ./server/configuration.nix
       ./server/wireguard.nix
-      ./server/peertube.nix
       ./server/adblock.nix
       ./server/searx.nix
       ./server/minio.nix

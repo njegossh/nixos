@@ -22,9 +22,9 @@
 }
 
 #Mozda mogu i samo mount minio-server i klasika folder
+
 #mc alias set hetzner-minio http://10.0.0.1:5353 marko aaa-mnogo-jaka-sifra-aaa
 
 #rclone --config /etc/rclone.conf mkdir minio-server:novi-bucket-ime
 
-#Brisanje
 #rclone --config /etc/rclone.conf purge minio-server:marko-documents
