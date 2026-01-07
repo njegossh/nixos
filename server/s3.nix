@@ -4,7 +4,7 @@
     mode = "0600";
     text = ''
       MINIO_ROOT_USER=marko
-      MINIO_ROOT_PASSWORD=sifra
+      MINIO_ROOT_PASSWORD=aaa-mnogo-jaka-sifra-aaa
     '';
   };
   services.minio = {
