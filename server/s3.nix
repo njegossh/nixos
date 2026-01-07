@@ -1,12 +1,10 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ 
-    minio-client
-  ];
+  environment.systemPackages = [ pkgs.minio-client ];
   environment.etc."minio/secrets.env" = {
     mode = "0600";
     text = ''
-      MINIO_ROOT_USER=admin
-      MINIO_ROOT_PASSWORD=strongpassword123
+      MINIO_ROOT_USER=marko
+      MINIO_ROOT_PASSWORD=sifra
     '';
   };
   services.minio = {
@@ -16,7 +14,6 @@
     dataDir = [ "/var/lib/minio/data" ];
     rootCredentialsFile = "/etc/minio/secrets.env";
   };
-
   networking.firewall.interfaces.wg0 = {
     allowedTCPPorts = [ 5353 5354 ];
   };

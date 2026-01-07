@@ -5,6 +5,7 @@
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
     };
+    supportedFilesystems = [ "fuse" ];
     kernelModules = [ "kvm-intel" "ipv6" "fuse" ];
     extraModulePackages = [ ];
   };
