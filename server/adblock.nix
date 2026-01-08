@@ -3,7 +3,6 @@
     pihole-ftl = {
       enable = true;
       settings = {
-        webserver.listen = [ "10.0.0.1:8080" ];
         dns.listen.local = true;
         dns.upstream = [ "9.9.9.9" "149.112.112.112" ];
         dns.listening = [ "wg0" ];
@@ -18,6 +17,10 @@
         enable = true;
         age = 30;
       };
+    };
+    pihole-web = {
+      enable = true;
+      port = 8080;
     };
   };
   networking.firewall.interfaces.wg0 = {
