@@ -33,4 +33,4 @@ in {
 #sudo nixos-rebuild switch --upgrade --flake .#
 
 ## Minio ##
-#read -rs a && b=$(rclone obscure "$a") && rclone --config /etc/rclone.conf mount minio-enc: ~/Documents/Hetzner --vfs-cache-mode full --crypt-password "$b" --crypt-password2 "$b" --daemon
+#rclone mount minio-enc: ~/Documents/Hetzner
