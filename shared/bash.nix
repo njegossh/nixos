@@ -13,7 +13,7 @@ in {
       export HISTCONTROL=ignorespace
     '';
     promptInit = ''
-      PS1="[ \w ] \$\[\033[0m\] " 
+      PS1="[ \W ] \$\[\033[0m\] "
       bind 'set search-ignore-case on'
       bind 'set completion-ignore-case on'
     '';
