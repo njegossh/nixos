@@ -17,10 +17,10 @@
         enable = true;
         age = 30;
       };
-    };
-    pihole-web = {
-      enable = true;
-      port = 8080;
+      pihole-web = {
+        enable = true;
+        port = 8080;
+      };
     };
   };
   networking.firewall.interfaces.wg0 = {
