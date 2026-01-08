@@ -1,7 +1,6 @@
 { ... } : {
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   networking = {
-    nameservers = [ "1.1.1.1" "9.9.9.9" ];
     nat = {
       enable = true;
       externalInterface = "enp1s0";
@@ -10,7 +9,7 @@
     };
     wg-quick.interfaces.wg0 = {
       address = [ "10.0.0.1/24" ];
-      dns = [ "10.0.0.1" ];
+      dns = [ "1.1.1.1" ];
       listenPort = 51820;
       privateKeyFile = "/env/wg.key";
       peers = [
