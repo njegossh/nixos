@@ -1,6 +1,7 @@
 { ... } : {
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   networking = {
+    nameservers = [ "1.1.1.1" "9.9.9.9" ];
     nat = {
       enable = true;
       externalInterface = "enp1s0";
