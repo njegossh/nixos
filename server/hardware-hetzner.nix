@@ -9,6 +9,8 @@
       enable = true;
       device = "/dev/sda";
     };
-    initrd.availableKernelModules = [ "sd_mod" "virtio_scsi" "virtio_pci" "ahci" "xhci_pci" "ext4" "sr_mod" ];
+    initrd.availableKernelModules = [ 
+      "sd_mod" "virtio_scsi" "virtio_pci" "ahci" "xhci_pci" "ext4" "sr_mod"
+    ];
   };
 }
