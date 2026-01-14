@@ -37,7 +37,8 @@
       ./client/configuration.nix 
       ./client/packages.nix 
       ./client/flutter.nix
-      ./client/minio.nix 
+      ./client/minio.nix
+      ./client/ssh.nix
       home
     ];
   in { 
