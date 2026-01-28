@@ -11,6 +11,8 @@ in {
       JAVA_HOME = pkgs.openjdk17.home;
       PATH = [ "$PATH" "${flutterHome}/bin/" ];
     };
-    systemPackages = with pkgs; [ openjdk17 sdkmanager unzip];
+    systemPackages = with pkgs; [ 
+      openjdk17 sdkmanager unzip android-tools
+    ];
   };
 }
