@@ -5,8 +5,7 @@
   environment = {
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
-      nautilus neovim cmus showtime
-      blackbox-terminal epiphany foliate
+      nautilus neovim cmus blackbox-terminal
     ];
   };
 }

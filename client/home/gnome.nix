@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     gnomeExtensions.blur-my-shell 
     gnomeExtensions.just-perfection
+    gnomeExtensions.rounded-window-corners-reborn
     nerd-fonts.fantasque-sans-mono
   ];
   dconf.settings = with lib.gvariant; {
@@ -11,6 +12,7 @@
     ];
     "org/gnome/desktop/session".idle-delay = mkUint32 0;
     "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
+      rounded-window-corners-reborn.extensionUuid
       just-perfection.extensionUuid
       blur-my-shell.extensionUuid
     ];
