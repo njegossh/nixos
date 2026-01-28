@@ -4,6 +4,7 @@
 	androidHome = "${sdkHome}/android-sdk";
 	flutterHome = "${sdkHome}/flutter-sdk";
 in {
+  programs.nix-ld.enable = true;
   environment = {
     variables = {
       ANDROID_HOME = androidHome;
@@ -11,9 +12,5 @@ in {
       PATH = [ "$PATH" "${flutterHome}/bin/" ];
     };
     systemPackages = with pkgs; [ openjdk17 sdkmanager unzip];
-  };
-  programs = {
-    nix-ld.enable = true;
-    adb.enable = true;
   };
 }
