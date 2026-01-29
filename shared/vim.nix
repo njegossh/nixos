@@ -25,6 +25,7 @@
       };
       languages = {
         enableTreesitter = true;
+        clang.enable = true;
         python.enable = true;
         dart.enable = true;
         nix.enable = true;
