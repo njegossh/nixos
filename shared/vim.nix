@@ -26,6 +26,7 @@
       languages = {
         enableTreesitter = true;
         clang.enable = true;
+        csharp.enable = true;
         python.enable = true;
         dart.enable = true;
         nix.enable = true;
