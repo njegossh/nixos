@@ -17,6 +17,10 @@
           publicKey = "nxMSbLowRtKyR/4O/TMVZjkrOKh4aV51Ks8gerLamUU=";
           allowedIPs = [ "10.0.0.2/32" ];
         }
+        {
+          publicKey = "RPJMjcqMYPMvmlYwthfDq350LOk6UJSR2TCMqGWBSlI=";
+          allowedIPs = [ "10.0.0.3/32" ];
+        }
       ];
     };
     firewall = {
