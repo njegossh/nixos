@@ -6,6 +6,7 @@
     gnome.excludePackages = [ pkgs.gnome-tour ];
     systemPackages = with pkgs; [
       nautilus neovim gapless blackbox-terminal
+      wine64Packages.waylandFull
     ];
   };
 }
