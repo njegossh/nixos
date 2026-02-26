@@ -2,6 +2,11 @@
   programs.nvf = {
     enable = true;
     settings.vim = {
+      maps.normal = {
+        "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
+        "<S-Tab>" = { action = ":bprev<CR>"; desc = "Previous buffer"; };
+        "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
+      };
       undoFile.enable = true;
       autocomplete.nvim-cmp.enable = true;
       clipboard = {
@@ -21,7 +26,7 @@
         transparent = true;
         enable = true;
         name = "gruvbox";
-        style = "light";
+        style = "dark";
       };
       languages = {
         enableTreesitter = true;
@@ -42,13 +47,7 @@
           renameSymbol = "<leader>rn";
         };
       };
-      telescope = {
-        enable = true;
-        mappings = {
-          findFiles = "<C-P>";
-          buffers = "<C-[>";
-        };
-      };
+      fzf-lua.enable = true;
       filetree.nvimTree = {
         enable = true;
         openOnSetup = false;

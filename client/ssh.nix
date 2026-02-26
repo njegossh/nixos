@@ -4,10 +4,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHwrjcFWLvlh9ia+S2gAikdnUTUxSZajcwDTrRean/5s marko@nixos"
     ];
   };
-  programs.mosh = {
-    enable = true;
-    openFirewall = true;
-  };
   services.openssh = {
     enable = true;
     settings = {
