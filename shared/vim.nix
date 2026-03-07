@@ -1,12 +1,12 @@
-{ ... } : {
+{ lib, ... } : {
   programs.nvf = {
     enable = true;
     settings.vim = {
       maps.normal = {
-        "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
-        "<S-Tab>" = { action = ":bprev<CR>"; desc = "Previous buffer"; };
-        "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
-      };
+       "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
+       "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
+       "<S-Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
+     };
       undoFile.enable = true;
       autocomplete.nvim-cmp.enable = true;
       clipboard = {
@@ -30,15 +30,16 @@
       };
       languages = {
         enableTreesitter = true;
-        clang.enable = true;
-        csharp.lsp.enable = true;
-        csharp.enable = true;
-        python.enable = true;
+        #clang.enable = true;
+        #csharp.lsp.enable = true;
+        #csharp.enable = true;
+        #python.enable = true;
         dart.enable = true;
         nix.enable = true;
       };
       lsp = {
         enable = true;
+        servers.dart.enable = lib.mkForce false;
         #formatOnSave = true;
         mappings = {
           hover = "K";
