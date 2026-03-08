@@ -8,7 +8,8 @@
        "<S-Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
      };
       undoFile.enable = true;
-      autocomplete.nvim-cmp.enable = true;
+      autocomplete.blink-cmp.enable = true;
+      #autocomplete.nvim-cmp.enable = true;
       clipboard = {
         enable = true;
         providers.wl-copy.enable = true;
