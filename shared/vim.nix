@@ -5,7 +5,7 @@
       maps.normal = {
        "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
        "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
-       "<S-Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
+       "<S-Tab>" = { action = ":bprevious<CR>"; desc = "Previous buffer"; };
      };
       undoFile.enable = true;
       autocomplete.blink-cmp.enable = true;
@@ -27,7 +27,7 @@
         transparent = true;
         enable = true;
         name = "gruvbox";
-        style = "dark";
+        style = "light";
       };
       languages = {
         enableTreesitter = true;
