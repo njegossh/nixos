@@ -3,9 +3,10 @@
     enable = true;
     settings.vim = {
       maps.normal = {
-       "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
-       "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
-       "<S-Tab>" = { action = ":bprevious<CR>"; desc = "Previous buffer"; };
+        "<Tab>" = { action = ":bnext<CR>"; desc = "Next buffer"; };
+        "f" = { action = ":lua require('fzf-lua').files()<CR>"; desc = "FZF"; };
+        "<S-Tab>" = { action = ":bprevious<CR>"; desc = "Previous buffer"; };
+        "e" = { action = ":Explore<CR>"; desc = "Explore"; };
      };
       undoFile.enable = true;
       autocomplete.blink-cmp.enable = true;
@@ -27,7 +28,7 @@
         transparent = true;
         enable = true;
         name = "gruvbox";
-        style = "light";
+        style = "dark";
       };
       languages = {
         enableTreesitter = true;
