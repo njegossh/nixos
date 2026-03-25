@@ -38,6 +38,7 @@
         #python.enable = true;
         dart.enable = true;
         nix.enable = true;
+        rust.enable = true;
       };
       lsp = {
         enable = true;
